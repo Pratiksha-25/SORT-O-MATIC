@@ -10,5 +10,6 @@ It offers an interactive, visual learning tool for sorting algorithms; implement
 - It also aids in comprehending the time complexities associated with different sorting algorithms.
 
 ## Working:-
-- -![image](
+
+![minor1](https://github.com/user-attachments/assets/2048c6dd-e125-4887-b70f-6469e7f45867)
 
