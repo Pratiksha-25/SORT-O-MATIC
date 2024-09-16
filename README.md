@@ -14,8 +14,14 @@ It offers an interactive, visual learning tool for sorting algorithms; implement
 ![minor1](https://github.com/user-attachments/assets/2048c6dd-e125-4887-b70f-6469e7f45867)
 
 ## Project:- 
-**Input -**
-**Output -**
+
+**Example Output:**
+![example1](https://github.com/user-attachments/assets/87d8928e-65fe-4cb4-9de7-76c2ffe6ffb9)
+
+![example2](https://github.com/user-attachments/assets/eef96e5f-f742-4e67-8eb9-014c78ef1055)
+
+
+
 
 
 ## Contributors:-
