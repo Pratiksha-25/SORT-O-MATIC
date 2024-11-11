@@ -54,4 +54,117 @@ void close()
     window=NULL;
     SDL_Quit();
 }
+void visualize(int x=-1,int y=-1,int x=-1)
+{
+    SDL_SetRenderDrawColor(renderer,0,0,0,0);
+    SDL_RenderClear(renderer);
+
+    int j=0;
+    for(int i=0; i<=scr_width-rectSize; i+=rectSize)
+    {
+        SDL_PumpEvents();
+
+        SDL_Rect rect={i, 0, rectSize, arr[j]};
+        if(complete)
+        {
+            SDL_SetRenderDrawColor(renderer, 100, 180, 100, 0);
+            SDL_RenderDrawRect(renderer, &rect);
+        }
+        else if(j==x || j==z)
+        {
+            SDL_SetRenderDrawColor(renderer, 100, 180, 100, 0);
+            SDL_RenderFillRect(renderer, &rect);
+        }
+        else if(j==y)
+        {
+            SDL_SetRenderDrawColor(renderer, 165, 105, 189, 0);
+            SDL_RenderFillRect(renderer, &rect);
+        }
+        else
+        {
+            SDL_SetRenderDrawColor(renderer, 170, 183, 184, 0);
+            SDL_RenderDrawRect(renderer, &rect);
+        }
+        j++;
+    }
+    SDL_RenderPresent(renderer);
+}
+
+void inplaceHeapSort(int* input, int n)
+{
+    for(int i=1; i<n; i++)
+    {
+       int childIndex=i;
+       int parentIndex=(childIndex-1)/2;
+
+       while(childIndex>0)
+       {
+           if(input[childIndex]>input[parentIndex])
+           {
+               int temp=input[parentIndex];
+               input[parentIndex]=input[childIndex];
+               input[childIndex]=temp;
+
+           }
+           else
+           {
+               break;
+           }
+
+           visualize(parentIndex, childIndex);
+           SDL_Delay(40);
+
+           childIndex=parentIndex;
+           parentIndex=(childIndex-1)/2;
+       }
+    }
+
+    for(int heapLast=n-1; heapLast>=0 ; heapLast--)
+    {
+        int temp=input[0];
+        input[0]=input[heapLast];
+        input[heapLast]=temp;
+
+        int parentIndex=0;
+        int leftChildIndex=2*parentIndex + 1;
+        int rightChildIndex=2*parentIndex + 2;
+
+        while(leftChildIndex<heapLast)
+        {
+            int maxIndex=parentIndex;
+
+            if(input[leftChildIndex]>input[maxIndex])
+            {
+                maxIndex=leftChildIndex;
+            }
+            if(rightChildIndex<heapLast && input[rightChildIndex]>input[maxIndex])
+            {
+                maxIndex=rightChildIndex;
+            }
+            if(maxIndex==parentIndex)
+            {
+                break;
+            }
+
+            int temp=input[parentIndex];
+            input[parentIndex]=input[maxIndex];
+            input[maxIndex]=temp;
+
+            visualize(maxIndex, parentIndex, heapLast);
+            SDL_Delay(40);
+
+            parentIndex=maxIndex;
+            leftChildIndex=2*parentIndex + 1;
+            rightChildIndex=2*parentIndex + 2;
+        }
+    }
+}
+
+
+    
+        
+
+
+
+
 
