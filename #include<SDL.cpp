@@ -278,6 +278,63 @@ void mergeSort(int a[], int si, int ei)
 
     merge2SortedArrays(a, si, ei);
 }
+void bubbleSort()
+{
+    for(int i=0; i<arrSize-1; i++)
+    {
+        for(int j=0; j<arrSize-1-i; j++)
+        {
+            if(arr[j+1]<arr[j])
+            {
+                int temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+
+                visualize(j+1, j, arrSize-i);
+            }
+            SDL_Delay(1);
+        }
+    }
+}
+
+void insertionSort()
+{
+    for(int i=1; i<arrSize; i++)
+    {
+        int j=i-1;
+        int temp=arr[i];
+        while(j>=0 && arr[j]>temp)
+        {
+            arr[j+1]=arr[j];
+            j--;
+
+            visualize(i, j+1);
+            SDL_Delay(5);
+        }
+        arr[j+1]=temp;
+    }
+}
+
+void selectionSort()
+{
+    int minIndex;
+    for(int i=0;i<arrSize-1;i++)
+    {
+        minIndex=i;
+        for(int j=i+1;j<arrSize;j++)
+        {
+            if(arr[j]<arr[minIndex])
+            {
+                minIndex=j;
+                visualize(i, minIndex);
+            }
+            SDL_Delay(1);
+        }
+        int temp=arr[i];
+        arr[i]=arr[minIndex];
+        arr[minIndex]=temp;
+    }
+}
 
 
 
