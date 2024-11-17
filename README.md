@@ -44,3 +44,7 @@ Available Controls inside Sorting Visualizer:-
 
 
 ## Contributors:-
+1. Aashna Shahi - https://github.com/aashnashahi
+2. Ashwin Parashar - https://github.com/anshulmantri2005
+3. Pratiksha Bahuguna - https://github.com/Pratiksha-25
+4. Anshul Mantri - https://github.com/ashwinp1018
