@@ -352,6 +352,33 @@ void randomizeAndSaveArray()
     }
 }
 
+void execute()
+{
+    if(!init())
+    {
+        cout<<"SDL Initialization Failed.\n";
+    }
+    else
+    {
+        randomizeAndSaveArray();
+        loadArr();
+
+        SDL_Event e;
+        bool quit=false;
+        while(!quit)
+        {
+            while(SDL_PollEvent(&e)!=0)
+            {
+                if(e.type==SDL_QUIT)
+                {
+                    quit=true;
+                    complete=false;
+                }
+                else if(e.type==SDL_KEYDOWN)
+                {
+                    switch(e.key.keysym.sym)
+                    {
+                        case(SDLK_q):
 
 
 
