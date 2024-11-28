@@ -336,6 +336,25 @@ void selectionSort()
     }
 }
 
+void loadArr()
+{
+    memcpy(arr, Barr, sizeof(int)*arrSize);
+}
+
+void randomizeAndSaveArray()
+{
+    unsigned int seed=(unsigned)time(NULL);
+    srand(seed);
+    for(int i=0; i<arrSize; i++)
+    {
+        int random=rand()%(SCREEN_HEIGHT);
+        Barr[i]=random;
+    }
+}
+
+
+
+
 
 
 
