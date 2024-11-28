@@ -491,6 +491,24 @@ void intro()
     }
 }
 
+int main(int argc, char* args[])
+{
+    intro();
+
+    while(1)
+    {
+        cout<<'\n';
+        if(controls())
+            execute();
+        else
+        {
+            cout<<"\nEXITING PROGRAM.\n";
+            break;
+        }
+    }
+
+    return 0;
+}
 
 
 
