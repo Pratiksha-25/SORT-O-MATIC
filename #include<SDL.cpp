@@ -429,6 +429,23 @@ void execute()
                             complete=true;
                             cout<<"\nQUICK SORT COMPLETE.\n";
                             break;
+                        case(SDLK_6):
+                            loadArr();
+                            cout<<"\nHEAP SORT STARTED.\n";
+                            complete=false;
+                            inplaceHeapSort(arr, arrSize);
+                            complete=true;
+                            cout<<"\nHEAP SORT COMPLETE.\n";
+                            break;
+                    }
+                }
+            }
+            visualize();
+        }
+        close();
+    }
+}
+
 
 
 
