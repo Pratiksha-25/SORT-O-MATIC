@@ -379,6 +379,56 @@ void execute()
                     switch(e.key.keysym.sym)
                     {
                         case(SDLK_q):
+                            quit=true;
+                            complete=false;
+                            cout<<"\nEXITING SORTING VISUALIZER.\n";
+                            break;
+                        case(SDLK_0):
+                            randomizeAndSaveArray();
+                            complete=false;
+                            loadArr();
+                            cout<<"\nNEW RANDOM LIST GENERATED.\n";
+                            break;
+                        case(SDLK_1):
+                            loadArr();
+                            cout<<"\nSELECTION SORT STARTED.\n";
+                            complete=false;
+                            selectionSort();
+                            complete=true;
+                            cout<<"\nSELECTION SORT COMPLETE.\n";
+                            break;
+                        case(SDLK_2):
+                            loadArr();
+                            cout<<"\nINSERTION SORT STARTED.\n";
+                            complete=false;
+                            insertionSort();
+                            complete=true;
+                            cout<<"\nINSERTION SORT COMPLETE.\n";
+                            break;
+                        case(SDLK_3):
+                            loadArr();
+                            cout<<"\nBUBBLE SORT STARTED.\n";
+                            complete=false;
+                            bubbleSort();
+                            complete=true;
+                            cout<<"\nBUBBLE SORT COMPLETE.\n";
+                            break;
+                        case(SDLK_4):
+                            loadArr();
+                            cout<<"\nMERGE SORT STARTED.\n";
+                            complete=false;
+                            mergeSort(arr, 0, arrSize-1);
+                            complete=true;
+                            cout<<"\nMERGE SORT COMPLETE.\n";
+                            break;
+                        case(SDLK_5):
+                            loadArr();
+                            cout<<"\nQUICK SORT STARTED.\n";
+                            complete=false;
+                            quickSort(arr, 0, arrSize-1);
+                            complete=true;
+                            cout<<"\nQUICK SORT COMPLETE.\n";
+                            break;
 
 
 
