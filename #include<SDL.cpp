@@ -446,6 +446,33 @@ void execute()
     }
 }
 
+bool controls()
+{
+    cout <<"WARNING: Giving repetitive commands may cause latency and the visualizer may behave unexpectedly. Please give a new command only after the current command's execution is done.\n\n"
+         <<"Available Controls inside Sorting Visualizer:-\n"
+         <<"    Use 0 to Generate a different randomized list.\n"
+         <<"    Use 1 to start Selection Sort Algorithm.\n"
+         <<"    Use 2 to start Insertion Sort Algorithm.\n"
+         <<"    Use 3 to start Bubble Sort Algorithm.\n"
+         <<"    Use 4 to start Merge Sort Algorithm.\n"
+         <<"    Use 5 to start Quick Sort Algorithm.\n"
+         <<"    Use 6 to start Heap Sort Algorithm.\n"
+         <<"    Use q to exit out of Sorting Visualizer\n\n"
+         <<"PRESS ENTER TO START SORTING VISUALIZER...\n\n"
+         <<"Or type -1 and press ENTER to quit the program.";
+
+    string s;
+    getline(cin, s);
+    if(s=="-1")
+    {
+        return false;
+    }
+    //else if(s=="\n")
+    //{
+    //    return true;
+    //}
+    return true;
+}
 
 
 
